@@ -24,7 +24,7 @@ def create():
 	try:
 		contacts.add_contact(request.form.get('name',''),request.form.get('phone',''))
 	except KeyError as e:
-		return render_template('create.html', warning=str(e))
+		return render_template('create.html', warning=str(e),name=request.form.get('name',''),phone=request.form.get('phone',''))
 
 
 if __name__ == '__main__':
