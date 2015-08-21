@@ -1,12 +1,13 @@
-import phones
+#import phones
 import pickle_ser
 import console_manager
 import network_manager
+import redis_phones
 
 serializer = pickle_ser.PickleSerializer()
-# iomanager = console_manager.ConsoleManager()
-iomanager = network_manager.NetworkManager()
-contacts = phones.Contacts(serializer)
+iomanager = console_manager.ConsoleManager()
+#iomanager = network_manager.NetworkManager()
+contacts = redis_phones.Contacts(serializer)
 
 def input_name():
     return iomanager.input('Name? ')
