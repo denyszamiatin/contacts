@@ -5,10 +5,16 @@
         <meta charset='utf-8' />
     </head>
     <body>
+	<ul>
+	{%for name, phone in c%}
+		<li>{{name}}:{{phone}}</li>
+	{%endfor%}
+	</ul>
         <form action='set' method='post'>
             <input type='text' name='name' />
             <input type='text' name='phone' />
-            <input type='submit' value='Ok'>
+            <input type='submit' value='Create'>
         </form>
+	<a href='/create'>Create</a>
     </body>
 </html>
